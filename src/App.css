@@ -2,37 +2,132 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navbar {
+  background-color: #1e2d3b;
+  height: 100px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.ant-anchor-wrapper-horizontal .ant-anchor .ant-anchor-ink {
+  display: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.ant-anchor-wrapper .ant-anchor .ant-anchor-link-title {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  position: relative;
+  display: block;
+  margin-block-end: 3px;
   color: white;
+  transition: all 0.3s;
+  text-decoration: none;
+  margin-right: 20px;
+  /* background-color: #F0F0F0; */
+  /* padding: 3px 12px 3px 12px;
+  border-width: 2px 4px;
+  border-radius: 40px; */
+  font-size: 14px;
 }
 
-.App-link {
-  color: #61dafb;
+.ant-anchor-wrapper
+  .ant-anchor
+  .ant-anchor-link-active
+  > .ant-anchor-link-title {
+  color: yellow;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.anchor {
+  background-color: transparent;
+  transition: box-shadow 0.3s ease;
+}
+
+.anchor-affixed {
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pitsa-item {
+  margin-left: 380px;
+}
+
+.anchor-button {
+  align-items: end;
+  margin-left: 470px;
+}
+
+#about,
+#product {
+  margin: 0;
+  padding: 0;
+}
+
+.back-top-color.ant-float-btn-default .ant-float-btn-body {
+  background-color: #fbbf24;
+  transition: background-color 0.2s;
+}
+
+.image {
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.image:hover {
+  transform: scale(1.05);
+  opacity: 0.3;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    transform: translateY(-10px);
   }
+}
+
+.bounce-animation {
+  animation: bounce 3s infinite;
+}
+
+@keyframes fade-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-in-left {
+  0% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fade-in-right {
+  animation: fade-in-right 0.6s ease-in-out;
+}
+
+.fade-in-left {
+  animation: fade-in-left 0.6s ease-in-out;
+}
+
+@keyframes slide-out-top {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}
+
+.slide-out-top {
+  animation: slide-out-top 0.6s ease-out forwards;
 }
