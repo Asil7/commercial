@@ -12,9 +12,11 @@ import Governance from "../pages/Governance";
 import Statistics from "../pages/Statistics";
 import Team from "../pages/Team";
 import Contact from "../pages/Contact";
+import favicon from "../pages/img/favicon.png";
 
 const Main = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -33,21 +35,23 @@ const Main = () => {
 
   return (
     <>
-      <Row className="navbar fixed top-0 w-full flex items-center">
-        <Col
-          xs={18}
-          sm={12}
-          md={7}
-          lg={10}
-          xl={13}
-          xxl={16}
-          className="text-white text-lg md:text-2xl p-2"
-          style={{ lineHeight: "1.2" }}
-        >
-          <div>
-            <strong>FLOWDALE</strong>
-          </div>
-          <div>TRADING DMCC</div>
+      <Row
+        className={`navbar fixed top-0 w-full flex items-center ${
+          isModalOpen ? "hidden" : ""
+        }`}
+      >
+        <Col xs={18} sm={12} md={7} lg={10} xl={13} xxl={16}>
+          <Row className="ms-6" style={{ lineHeight: "0.1" }}>
+            <Col>
+              <img src={favicon} alt="Favicon" className="mr-2" />
+            </Col>
+            <Col className="text-white text-lg md:text-2xl">
+              <div>
+                <strong>FLOWDALE</strong>
+              </div>
+              <div>TRADING DMCC</div>
+            </Col>
+          </Row>
         </Col>
         <Col
           xs={6}
@@ -74,32 +78,15 @@ const Main = () => {
                   href: "#geographicScope",
                   title: "GEOGRAPHIC SCOPE",
                 },
+                { key: "map", href: "#map", title: "MAP" },
+                { key: "governance", href: "#governance", title: "GOVERNANCE" },
+                { key: "statistics", href: "#statistics", title: "STATISTICS" },
                 { key: "team", href: "#team", title: "TEAM" },
                 { key: "contact", href: "#contact", title: "CONTACT" },
               ]}
             />
           </div>
         </Col>
-        {isMobileMenuOpen && (
-          <Col span={24} className="md:hidden bg-gray-800 text-white">
-            <Anchor
-              direction="vertical"
-              items={[
-                { key: "home", href: "#home", title: "HOME" },
-                { key: "about", href: "#about", title: "ABOUT" },
-                { key: "product", href: "#product", title: "PRODUCTS" },
-                {
-                  key: "geographicScope",
-                  href: "#geographicScope",
-                  title: "GEOGRAPHIC SCOPE",
-                },
-                { key: "team", href: "#team", title: "TEAM" },
-                { key: "contact", href: "#contact", title: "CONTACT" },
-              ]}
-              className="flex flex-col items-start p-4"
-            />
-          </Col>
-        )}
       </Row>
 
       <div>
@@ -108,9 +95,9 @@ const Main = () => {
             className="bg-fixed bg-cover bg-center h-screen"
             style={{ backgroundImage: `url(${ship2})` }}
           >
-            <div className="flex justify-center items-center h-full px-4">
-              <div className="text-center">
-                <h1 className="text-white mt-24 md:mt-36 text-3xl md:text-5xl lg:text-6xl font-bold leading-tight md:leading-normal">
+            <div className="flex flex-col justify-start items-center h-full px-4 mt-16">
+              <div className="text-center mt-24 md:mt-36">
+                <h1 className="text-white text-3xl md:text-5xl lg:text-6xl font-bold leading-tight md:leading-normal">
                   A COMMODITY <br /> TRADING COMPANY
                 </h1>
                 <div
@@ -138,7 +125,7 @@ const Main = () => {
             id="product"
             className="w-full xl:w-2/4 lg:w-3/4 md:w-3/4 px-4 md:px-8 lg:px-0"
           >
-            <Products />
+            <Products setIsModalOpen={setIsModalOpen} />
           </div>
         </div>
 

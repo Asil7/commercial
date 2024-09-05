@@ -13,8 +13,10 @@ const Map = () => {
 
   const locations = [
     { label: "Germany", lat: 51.1657, lng: 10.4515 },
+    { label: "Kazakhstan", lat: 48.0196, lng: 66.9237 },
     { label: "China", lat: 35.8617, lng: 104.1954 },
-    { label: "India", lat: 20.5937, lng: 78.9629 },
+    { label: "Mongolia", lat: 46.8625, lng: 103.8467 },
+    { label: "Cyprus", lat: 35.126388, lng: 17.86331 },
   ];
 
   return (

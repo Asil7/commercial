@@ -1,6 +1,7 @@
 import "./App.css";
 import Main from "./component/main/Main";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ProductDetail from "./component/pages/ProductDetail";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<Main />} />
+            <Route path="/product-detail/" element={<ProductDetail />} />
           </Routes>
         </main>
       </BrowserRouter>
