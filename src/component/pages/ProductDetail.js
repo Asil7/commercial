@@ -11,17 +11,28 @@ const ProductDetail = () => {
   }
 
   return (
-    <div>
-      <Row>
-        <Col span={14} className="m-24">
+    <div className="p-4 sm:p-6 md:p-8 lg:p-12">
+      <Row gutter={[16, 24]} justify="center">
+        <Col xs={24} sm={24} md={24} lg={16} xl={18}>
           <Image
             src={Bitumen2}
             style={{ width: "100%", height: "auto", objectFit: "cover" }}
           />
         </Col>
-        <Col span={6} className="mt-36">
-          <p className="mb-5">{product?.name}</p>
-          <p>{product?.description}</p>
+        <Col
+          xs={24}
+          sm={24}
+          md={24}
+          lg={8}
+          xl={6}
+          className="flex flex-col justify-center"
+        >
+          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold mb-4">
+            {product?.name}
+          </p>
+          <p className="text-base sm:text-lg md:text-xl">
+            {product?.description}
+          </p>
         </Col>
       </Row>
     </div>
