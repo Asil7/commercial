@@ -18,27 +18,28 @@ const Map = () => {
   ];
 
   return (
-    <div className="w-full px-4 md:px-8 lg:px-12">
-      <MapContainer
-        center={[35, 50]}
-        zoom={3}
-        style={{ height: "400px", width: "100%", borderRadius: "8px" }}
-      >
-        <TileLayer
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          attribution='© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        />
-        {locations.map((location, index) => (
-          <Marker
-            key={index}
-            position={[location.lat, location.lng]}
-            icon={customMarkerIcon}
-          >
-            <Popup>{location.label}</Popup>
-          </Marker>
-        ))}
-      </MapContainer>
-    </div>
+    <MapContainer
+      center={[35, 50]}
+      zoom={3}
+      dragging={false}
+      zoomControl={false}
+      scrollWheelZoom={false}
+      style={{ height: "400px" }}
+    >
+      <TileLayer
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        attribution='© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      />
+      {locations.map((location, index) => (
+        <Marker
+          key={index}
+          position={[location.lat, location.lng]}
+          icon={customMarkerIcon}
+        >
+          <Popup>{location.label}</Popup>
+        </Marker>
+      ))}
+    </MapContainer>
   );
 };
 

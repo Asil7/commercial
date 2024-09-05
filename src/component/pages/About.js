@@ -3,7 +3,7 @@ import city from "./img/city.jpg";
 const About = () => {
   return (
     <div className="flex flex-col md:flex-row h-auto">
-      <div className="w-full md:w-[35%] h-auto bg-gray-100 flex items-center justify-center p-6 md:p-12">
+      <div className="w-full xl:w-[35%] lg:w-[45%] md:w-[50%] h-auto bg-gray-100 flex items-center justify-center p-6 md:p-12">
         <div className="max-w-lg">
           <div className="text-4xl md:text-6xl mb-4">About</div>
           <hr className="w-20 md:w-40 border-yellow-500 border-2 md:border-4 mb-4" />
@@ -28,7 +28,7 @@ const About = () => {
       </div>
 
       <div
-        className="w-full md:w-[65%] h-64 md:h-auto bg-fixed bg-cover bg-center"
+        className="w-full xl:w-[65%] lg:w-[55%] md:w-[50%] h-64 md:h-auto bg-fixed bg-cover bg-center"
         style={{ backgroundImage: `url(${city})` }}
       />
     </div>

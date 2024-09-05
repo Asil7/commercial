@@ -33,16 +33,7 @@ const Main = () => {
 
   return (
     <>
-      <Row
-        className="navbar fixed top-0 w-full flex items-center bg-black"
-        style={{
-          zIndex: 1000,
-          position: "fixed",
-          top: 0,
-          width: "100%",
-          backgroundColor: "black",
-        }}
-      >
+      <Row className="navbar fixed top-0 w-full flex items-center">
         <Col
           xs={18}
           sm={12}
@@ -134,13 +125,19 @@ const Main = () => {
         </div>
 
         <div className="flex justify-end bg-gray-100">
-          <div id="about" className="w-full md:w-3/4 px-4 md:px-8 lg:px-0">
+          <div
+            id="about"
+            className="w-full xl:w-[78%] lg:w-[100%] md:w-4/4 px-4 md:px-8 lg:px-0"
+          >
             <About />
           </div>
         </div>
 
         <div className="flex justify-center">
-          <div id="product" className="w-full md:w-3/4 px-4 md:px-8 lg:px-0">
+          <div
+            id="product"
+            className="w-full xl:w-2/4 lg:w-3/4 md:w-3/4 px-4 md:px-8 lg:px-0"
+          >
             <Products />
           </div>
         </div>
@@ -148,38 +145,44 @@ const Main = () => {
         <div className="flex justify-center">
           <div
             id="geographicScope"
-            className="w-full md:w-3/4 px-4 md:px-8 lg:px-0"
+            className="w-full xl:w-2/4 lg:w-3/4 md:w-3/4 px-4 md:px-8 lg:px-0"
           >
             <GeographicScope />
           </div>
         </div>
 
         <div className="flex justify-center bg-gray-50 mt-14">
-          <div className="w-full md:w-3/4 px-4 md:px-8 lg:px-0 mb-14">
+          <div className="w-full xl:w-2/4 lg:w-3/4 md:w-3/4 px-4 md:px-8 lg:px-0 mb-14">
             <Map />
           </div>
         </div>
 
         <div className="flex justify-center bg-gray-100">
-          <div className="w-full md:w-3/4 px-4 md:px-8 lg:px-0">
+          <div className="w-full xl:w-2/4 lg:w-3/4 md:w-3/4 px-4 md:px-8 lg:px-0">
             <Governance />
           </div>
         </div>
 
         <div className="flex justify-center bg-yellow-400">
-          <div className="w-full lg:w-2/4 md:w-3/4 px-4 md:px-8 lg:px-0">
+          <div className="w-full xl:w-2/4 lg:w-3/4 md:w-3/4 px-4 md:px-8 lg:px-0">
             <Statistics />
           </div>
         </div>
 
         <div className="flex justify-center bg-gray-100">
-          <div id="team" className="w-full md:w-3/4 px-4 md:px-8 lg:px-0">
+          <div
+            id="team"
+            className="w-full xl:w-2/4 lg:w-3/4 md:w-3/4 px-4 md:px-8 lg:px-0"
+          >
             <Team />
           </div>
         </div>
 
         <div className="flex justify-center">
-          <div id="contact" className="w-full md:w-3/4 px-4 md:px-8 lg:px-0">
+          <div
+            id="contact"
+            className="w-full xl:w-2/4 lg:w-3/4 md:w-3/4 px-4 md:px-8 lg:px-0"
+          >
             <Contact />
           </div>
         </div>
