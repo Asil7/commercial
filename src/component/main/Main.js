@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Anchor, Row, Col } from "antd";
 import Footer from "../footer/Footer";
 import About from "../pages/About";
@@ -31,6 +31,19 @@ const Main = () => {
       });
     }
   };
+
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      const element = document.querySelector(hash);
+      if (element) {
+        window.scrollTo({
+          top: element.offsetTop,
+          behavior: "smooth",
+        });
+      }
+    }
+  }, []);
 
   return (
     <>
@@ -151,7 +164,7 @@ const Main = () => {
         </div>
 
         <div className="flex justify-center bg-gray-50 mt-14">
-          <div className="w-full xl:w-2/4 lg:w-3/4 md:w-3/4 px-4 md:px-8 lg:px-0 mb-14">
+          <div className="w-full sm:w-4/4 xl:w-2/4 lg:w-3/4 md:w-3/4 px-4 md:px-8 lg:px-0 mb-14">
             <Map />
           </div>
         </div>

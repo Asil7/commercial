@@ -19,14 +19,17 @@ const Map = () => {
     { label: "Cyprus", lat: 35.126388, lng: 17.86331 },
   ];
 
+  // Determine zoom level based on screen width
+  const zoomLevel = window.innerWidth < 640 ? 2 : 3;
+
   return (
     <MapContainer
       center={[35, 50]}
-      zoom={3}
+      zoom={zoomLevel}
       dragging={false}
       zoomControl={false}
       scrollWheelZoom={false}
-      style={{ height: "400px" }}
+      className="h-[200px] sm:h-[300px] md:h-[300px] lg:h-[400px] xl:h-[400px]"
     >
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

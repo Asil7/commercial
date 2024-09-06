@@ -4,16 +4,14 @@ import oil from "./img/oil.jpg";
 import gasoline from "./img/gasoline.jpg";
 import middleDistillates from "./img/middleDistillates.jpg";
 import { useInView } from "react-intersection-observer";
-import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-const Products = ({ setIsModalOpen }) => {
+const Products = () => {
   const { ref: bitumenRef, inView: bitumenInView } = useInView();
   const { ref: oilRef, inView: oilInView } = useInView();
   const { ref: gasolineRef, inView: gasolineInView } = useInView();
   const { ref: distillatesRef, inView: distillatesInView } = useInView();
 
-  const [selectedProduct, setSelectedProduct] = useState(null);
   const navigate = useNavigate();
 
   const products = [
@@ -47,8 +45,8 @@ const Products = ({ setIsModalOpen }) => {
     },
   ];
 
-  const handleProductClick = (product) => {
-    navigate(`/product-detail`, { state: { product } });
+  const handleProductClick = (id) => {
+    navigate(`/product/${id}`);
   };
 
   return (
@@ -57,7 +55,10 @@ const Products = ({ setIsModalOpen }) => {
         <div className="text-4xl md:text-6xl mb-4">PRODUCTS</div>
         <hr className="w-20 md:w-40 border-yellow-500 border-2 md:border-4 mb-4" />
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-screen-lg w-full mt-6">
-          <div className={`flex flex-col justify-between text-center `}>
+          <div
+            onClick={() => handleProductClick(products[0].id)}
+            className={`flex flex-col justify-between text-center `}
+          >
             <div className={`${bitumenInView ? "slide-out-top" : ""}`}>
               <strong>{products[0].name}</strong>
               <p className="text-sm md:text-base text-gray-600">
@@ -72,12 +73,14 @@ const Products = ({ setIsModalOpen }) => {
                 src={products[0].image}
                 preview={false}
                 className="mt-4 image"
-                onClick={() => handleProductClick(products[0])}
               />
             </div>
           </div>
 
-          <div className={`flex flex-col justify-between text-center`}>
+          <div
+            onClick={() => handleProductClick(products[1].id)}
+            className={`flex flex-col justify-between text-center`}
+          >
             <div className={`${oilInView ? "slide-out-top" : ""}`}>
               <strong>{products[1].name}</strong>
               <p className="text-sm md:text-base text-gray-600">
@@ -89,12 +92,14 @@ const Products = ({ setIsModalOpen }) => {
                 src={products[1].image}
                 preview={false}
                 className="mt-4 image"
-                onClick={() => handleProductClick(products[1])}
               />
             </div>
           </div>
 
-          <div className={`flex flex-col justify-between text-center `}>
+          <div
+            onClick={() => handleProductClick(products[2].id)}
+            className={`flex flex-col justify-between text-center `}
+          >
             <div className={`${gasolineInView ? "slide-out-top" : ""}`}>
               <strong>{products[2].name}</strong>
               <p className="text-sm md:text-base text-gray-600">
@@ -109,12 +114,14 @@ const Products = ({ setIsModalOpen }) => {
                 src={products[2].image}
                 preview={false}
                 className="mt-4 image"
-                onClick={() => handleProductClick(products[2])}
               />
             </div>
           </div>
 
-          <div className={`flex flex-col justify-between text-center`}>
+          <div
+            onClick={() => handleProductClick(products[3].id)}
+            className={`flex flex-col justify-between text-center`}
+          >
             <div className={`${gasolineInView ? "slide-out-top" : ""}`}>
               <strong>{products[3].name}</strong>
               <p className="text-sm md:text-base text-gray-600">
@@ -129,7 +136,6 @@ const Products = ({ setIsModalOpen }) => {
                 src={products[3].image}
                 preview={false}
                 className="mt-4 image"
-                onClick={() => handleProductClick(products[3])}
               />
             </div>
           </div>
