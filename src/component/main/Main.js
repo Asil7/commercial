@@ -45,8 +45,20 @@ const Main = () => {
     }
   }, []);
 
+  const handleTextSelection = () => {
+    const text = window.getSelection().toString();
+    if (text) {
+      speakText(text);
+    }
+  };
+
+  const speakText = (text) => {
+    const utterance = new SpeechSynthesisUtterance(text);
+    speechSynthesis.speak(utterance);
+  };
+
   return (
-    <>
+    <div onMouseUp={handleTextSelection}>
       <Row className="navbar fixed top-0 w-full flex items-center">
         <Col xs={18} sm={12} md={7} lg={10} xl={13} xxl={16}>
           <Row className="ms-6" style={{ lineHeight: "1.1" }}>
@@ -55,9 +67,9 @@ const Main = () => {
             </Col>
             <Col className="text-white text-lg md:text-2xl">
               <div>
-                <strong>FLOWDALE</strong>
+                <strong>TPS</strong>
               </div>
-              <div>TRADING DMCC</div>
+              <div>INTERWORK</div>
             </Col>
           </Row>
         </Col>
@@ -212,7 +224,7 @@ const Main = () => {
           <Footer />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
